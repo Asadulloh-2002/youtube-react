@@ -1,0 +1,1 @@
+export const Logo = '../../public/720927.svg'

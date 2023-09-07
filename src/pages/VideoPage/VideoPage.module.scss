@@ -1,0 +1,10 @@
+.card {
+    width: 100% !important;
+    height: 77vh !important;
+}
+@media screen and (max-width: 600px) {
+    .card {
+        height: 45vh !important;
+    }
+}
+
