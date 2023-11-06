@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import { Category, Videos, Loader } from '../'
 import { colors } from '../../constants/colors'
 import { AppService } from '../service/appservice'
-import styles from './Main.module.scss'
 
 const Main = () => {
     const [selectedCategory, setSelectedCategory] = useState('New')
@@ -21,6 +20,7 @@ const Main = () => {
         }
         getData()
     }, [selectedCategory])
+    
     return (
         <Stack>
             <Category selectedCategoryHandler={selectedCategoryHandler} selectedCategory={selectedCategory} />    

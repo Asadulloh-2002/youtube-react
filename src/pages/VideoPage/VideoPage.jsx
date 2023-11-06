@@ -24,8 +24,8 @@ const VideoPage = () => {
         }
         getData()
     }, [id])
-    console.log(reletedVideo);
-    // console.log(videoDetail);
+    // console.log(reletedVideo);
+    console.log(videoDetail);
     if(!videoDetail && !reletedVideo) return 
     return (
         <div>
@@ -45,23 +45,23 @@ const VideoPage = () => {
                         <Typography variant='h5' fontWeight='bold' p={2}>
                             {videoDetail.snippet.title}
                         </Typography>
-                        <Typography variant='subtitle2' p={2} sx={{opacity: '.7'}}>
-                            {videoDetail.snippet.description}
-                        </Typography>
                         <Stack direction={'row'} gap={'20px'} alignItems='center' py={1} px={3} >
-                            <Stack sx={{opacity: '.7'}} direction={'row'} alignItems='center' gap='5px'>
+                            <Stack sx={{opacity: '.7', cursor: "pointer"}} direction={'row'} alignItems='center' gap='5px'>
                                 <Visibility />
                                 {parseInt(videoDetail.statistics.viewCount).toLocaleString()} views
                             </Stack>
-                            <Stack sx={{opacity: '.7'}} direction={'row'} alignItems='center' gap='5px'>
+                            <Stack sx={{opacity: '.7', cursor: "pointer"}} direction={'row'} alignItems='center' gap='5px'>
                                 <ThumbUp />
                                 {parseInt(videoDetail.statistics.likeCount).toLocaleString()} like
                             </Stack>
-                            <Stack sx={{opacity: '.7'}} direction={'row'} alignItems='center' gap='5px'>
+                            <Stack sx={{opacity: '.7', cursor: "pointer"}} direction={'row'} alignItems='center' gap='5px'>
                                 <Chat />
                                 {parseInt(videoDetail.statistics.commentCount).toLocaleString()} comment
                             </Stack>
                         </Stack>
+                        <Typography variant='subtitle2' p={2} sx={{opacity: '.7'}}>
+                            {videoDetail.snippet.description}
+                        </Typography>
                         <Link to={`/channel/${videoDetail.snippet.channelId}`}>
                             <Stack direction={'row'} gap={'20px'} alignItems='center' py={1} px={3}>
                                 <Stack direction={'row'} alignItems='center' gap={'10px'}>
